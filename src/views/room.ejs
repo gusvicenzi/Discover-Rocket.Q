@@ -7,9 +7,9 @@
     <!-- VIEWPORT -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS -->
-    <link rel="stylesheet" href="styles/global.css" />
-    <link rel="stylesheet" href="styles/room.css" />
-    <link rel="stylesheet" href="styles/modal.css" />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/styles/room.css" />
+    <link rel="stylesheet" href="/styles/modal.css" />
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,22 +17,24 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- SCRIPTS -->
+    <script src="/scripts/main.js" defer type="module"></script>
   </head>
 
   <body>
     <div id="room" class="content">
       <header>
-        <a href="#">
-          <img src="images/logo.svg" alt="Rocket.q logo" />
+        <a href="/">
+          <img src="/images/logo.svg" alt="Rocket.q logo" />
         </a>
 
         <div class="buttons">
-          <div class="button outlined">
+          <div class="button outlined" id="room-id" data-id="323243">
             #323243
-            <img src="images/copy.svg" alt="Copiar numero da sala" />
+            <img src="/images/copy.svg" alt="Copiar numero da sala" />
           </div>
           <a href="#" class="button">
-            <img src="images/users-white.svg" alt="Criar uma sala" />
+            <img src="/images/users-white.svg" alt="Criar uma sala" />
             Criar sala
           </a>
         </div>
@@ -53,7 +55,7 @@
 
             <footer>
               <div>
-                <img src="images/locker.svg" alt="Cadeado" />
+                <img src="/images/locker.svg" alt="Cadeado" />
                 Esta pergunta é anônima
               </div>
               <button>Enviar</button>
@@ -67,19 +69,19 @@
             <div class="question-wrapper">
               <div class="question-content">
                 <div class="user">
-                  <img src="images/user.svg" alt="avatar" />
+                  <img src="/images/user.svg" alt="avatar" />
                 </div>
                 <div class="question">
                   <p>Qual a difereça entre const, var e let no JavaScript?</p>
                 </div>
               </div>
               <div class="actions">
-                <a href="#" class="check">
-                  <img src="images/check.svg" alt="Marcar como lida" />
+                <a href="#" class="check" data-id="2">
+                  <img src="/images/check.svg" alt="Marcar como lida" />
                   Marcar como lida</a
                 >
-                <a href="#" class="delete">
-                  <img src="images/trash.svg" alt="Excluir" />
+                <a href="#" class="delete" data-id="2" data-id="3">
+                  <img src="/images/trash.svg" alt="Excluir" />
                   Excluir</a
                 >
               </div>
@@ -88,19 +90,19 @@
             <div class="question-wrapper">
               <div class="question-content">
                 <div class="user">
-                  <img src="images/user.svg" alt="avatar" />
+                  <img src="/images/user.svg" alt="avatar" />
                 </div>
                 <div class="question">
                   <p>O que é JavaScript?</p>
                 </div>
               </div>
               <div class="actions">
-                <a href="#" class="check">
-                  <img src="images/check.svg" alt="Marcar como lida" />
+                <a href="#" class="check" data-id="3">
+                  <img src="/images/check.svg" alt="Marcar como lida" />
                   Marcar como lida</a
                 >
-                <a href="#" class="delete">
-                  <img src="images/trash.svg" alt="Excluir" />
+                <a href="#" class="delete" data-id="3">
+                  <img src="/images/trash.svg" alt="Excluir" />
                   Excluir</a
                 >
               </div>
@@ -109,7 +111,7 @@
             <div class="question-wrapper">
               <div class="question-content">
                 <div class="user">
-                  <img src="images/user.svg" alt="avatar" />
+                  <img src="/images/user.svg" alt="avatar" />
                 </div>
                 <div class="question">
                   <p>
@@ -125,12 +127,12 @@
                 </div>
               </div>
               <div class="actions">
-                <a href="#" class="check">
-                  <img src="images/check.svg" alt="Marcar como lida" />
+                <a href="#" class="check" data-id="4">
+                  <img src="/images/check.svg" alt="Marcar como lida" />
                   Marcar como lida</a
                 >
-                <a href="#" class="delete">
-                  <img src="images/trash.svg" alt="Excluir" />
+                <a href="#" class="delete" data-id="4">
+                  <img src="/images/trash.svg" alt="Excluir" />
                   Excluir</a
                 >
               </div>
@@ -139,15 +141,15 @@
             <div class="question-wrapper read">
               <div class="question-content">
                 <div class="user">
-                  <img src="images/user.svg" alt="avatar" />
+                  <img src="/images/user.svg" alt="avatar" />
                 </div>
                 <div class="question">
                   <p>O que é TypeScript?</p>
                 </div>
               </div>
               <div class="actions">
-                <a href="#" class="check">
-                  <img src="images/check.svg" alt="Pergunta lida" />
+                <a href="#" class="check" data-id="1">
+                  <img src="/images/check.svg" alt="Pergunta lida" />
                   Pergunta lida</a
                 >
               </div>
@@ -159,12 +161,12 @@
 
     <!-- MODAL -->
 
-    <div class="modal-wrapper active">
+    <div class="modal-wrapper">
       <div class="modal">
         <h2>Excluir pergunta</h2>
         <p>Tem certeza que você deseja excluir esta pergunta?</p>
 
-        <form action="#">
+        <form action="#" method="POST">
           <label class="sr-only" for-id="password"
             >Digite sua senha de administrador</label
           >
@@ -176,7 +178,7 @@
           />
 
           <div class="buttons">
-            <div class="button grey">Cancelar</div>
+            <div class="button grey cancel">Cancelar</div>
             <button class="red">Sim, exluir</button>
           </div>
         </form>
