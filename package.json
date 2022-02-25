@@ -1,0 +1,23 @@
+{
+  "name": "discover",
+  "version": "1.0.0",
+  "description": "Gerenciador de perguntas anônimas",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusvicenzi/Discover-Rocket.Q.git"
+  },
+  "author": "Gustavo Vicenzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gusvicenzi/Discover-Rocket.Q/issues"
+  },
+  "homepage": "https://github.com/gusvicenzi/Discover-Rocket.Q#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}
